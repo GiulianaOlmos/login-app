@@ -1,5 +1,4 @@
 const express = require('express');
-const config = require('./config/config');
       bodyParser = require('body-parser');
       jwt = require('jsonwebtoken');
       config = require('./config/config');
@@ -7,10 +6,7 @@ const config = require('./config/config');
 
 const port = process.env.PORT || 8080;
 
-app.set('llave', config.llave);
-
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
 
@@ -22,6 +18,13 @@ app.get('/Holis', function (req, res) {
     res.send('Amiga funciona');
 });
 
+app.post('/autenticar', (req, res) => {
+    if(req.body.usuario === "giuliana" && req.body.contrasena === "estaesamicontrasena"){
+        res.send("Vevo te logueaste")
+    } else {
+        res.json({ mensaje: "Usuario o contraseña incorrectos"})
+    }
+})
 
 
 app.listen(port);
