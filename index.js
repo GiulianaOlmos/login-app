@@ -12,16 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
-
-app.get('/', function (req, res) {
-    res.send('Hola Giuli');
-});
-
-app.get('/Holis', function (req, res) {
-    res.send('Amiga funciona');
-});
-
-app.post('/autenticar', (req, res) => {
+app.post('/autenticar', function(req, res) {
     if(req.body.usuario === "giuliana" && req.body.contrasena === "estaesamicontrasena"){
         const payload = {
             check: true
@@ -37,5 +28,15 @@ app.post('/autenticar', (req, res) => {
         res.json({ mensaje: "Usuario o contraseña incorrectos"})
     }
 })
+
+app.get('/', function (req, res) {
+    res.send('Hola Giuli');
+});
+
+app.get('/Holis', function (req, res) {
+    res.send('Amiga funciona');
+});
+
+
 
 app.listen(port);
