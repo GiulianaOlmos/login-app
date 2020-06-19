@@ -18,11 +18,8 @@ app.get('/Holis', function (req, res) {
 });
 
 app.post('/autenticar', (req, res) => {
-    if(req.body.usuario === "giuliana" && req.body.contrasena === "estaesamicontrasena"){
-        res.send("Vevo te logueaste")
-    } else {
-        res.json({ mensaje: "Usuario o contraseña incorrectos"})
-    }
+    res.send("OLA KE ASE")
+
 })
 
 
