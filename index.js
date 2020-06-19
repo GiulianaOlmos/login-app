@@ -1,7 +1,5 @@
 const express = require('express');
       bodyParser = require('body-parser');
-      jwt = require('jsonwebtoken');
-      config = require('./config/config');
       app = express();
 
 const port = process.env.PORT || 8080;
@@ -20,7 +18,7 @@ app.get('/Holis', function (req, res) {
 
 app.post('/autenticar', (req, res) => {
     if(req.body.usuario === "giuliana" && req.body.contrasena === "estaesamicontrasena"){
-        res.send("Vevo te logueaste")
+        res.send({ "name":"Giuliana", "Apellido":Olmos,  "age":25, "description": "Me gusta codear, los gatos y los videjuegos me marean" })
     } else {
         res.json({ mensaje: "Usuario o contraseña incorrectos"})
     }
