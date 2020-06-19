@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/Holis', function (req, res) {
-    res.send('Amiga funciona');
+    res.send({mensaje : 'Amiga funciona'});
 });
 
 app.post('/autenticar', (req, res) => {
