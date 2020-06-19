@@ -6,7 +6,8 @@ const express = require('express');
 
 const port = process.env.PORT || 8080;
 
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
 
 
 app.get('/', function (req, res) {
