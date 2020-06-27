@@ -1,9 +1,6 @@
 const express = require('express');
       bodyParser = require('body-parser');
       app = express();
-      var birds = require('./birds');
-      
-      app.use('/birds', birds);
 
 const port = process.env.PORT || 8080;
 
