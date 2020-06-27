@@ -1,16 +1,15 @@
 const express = require('express');
       bodyParser = require('body-parser');
       app = express();
+      var birds = require('./birds');
+      
+      app.use('/birds', birds);
 
 const port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 
-
-app.get('/', function (req, res) {
-    res.send('Hola Giuli');
-});
 
 app.get('/Holis', function (req, res) {
     res.send({mensaje : 'Amiga funciona'});
